@@ -4,9 +4,10 @@ import Weather from './Weather';
 import Temperature from './Temperature';
 import Humidity from './Humidity';
 import Wind from './Wind';
+import WeatherIcon from '../components/WeatherIcon';
 import './Current.scss';
 
-let Current = () => {
+const Current = () => {
   return (	
 			<section 
 				className="Current" 
@@ -15,8 +16,10 @@ let Current = () => {
 				<Header 
 					name="New York" 
 					currentDateTime="Thu Nov 4 2021 11:21am" />
+				<WeatherIcon 
+          icon="01d" 
+          description="clear sky" />
 				<Weather 
-					icon="01d"
 					description="clear sky" 
 					main="Clear" 
 				/>

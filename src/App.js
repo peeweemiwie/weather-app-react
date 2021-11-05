@@ -12,7 +12,7 @@ function App() {
 				<Forecast />
 			</main>
 			<footer>
-				Design and code by <a href="https://www.linkedin.com/in/miwayagi/" target="_blank" rel="noreferrer">Miwa Kaur</a>. View code at GitHub.
+				Design and code by <a href="https://www.linkedin.com/in/miwayagi/" target="_blank" rel="noreferrer">Miwa Kaur</a>. View code at <a href="https://github.com/peeweemiwie/weather-app-react" target="_blank" rel="noreferrer">GitHub</a>.
 			</footer>
 		</div>
 	);

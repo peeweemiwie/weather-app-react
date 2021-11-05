@@ -1,7 +1,7 @@
 import React from 'react';
 import './Humidity.scss';
 
-let Humidity = ({humidity}) => {
+const Humidity = ({humidity}) => {
   return (
     <section 
       className="Humidity border" 

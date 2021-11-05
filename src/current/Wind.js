@@ -1,7 +1,7 @@
 import React from 'react';
 import './Wind.scss';
 
-let Wind = ({speed}) => {
+const Wind = ({speed}) => {
   // speed = Math.round(speed);
   return (
     <section className="Wind border" id="container-wind">

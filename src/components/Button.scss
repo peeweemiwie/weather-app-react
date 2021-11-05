@@ -1,0 +1,42 @@
+@import '../styles/variables.scss';
+// input default paddings:
+@mixin btn-default {
+  border-radius: .5rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+@mixin btn-colors($bgcolor, $border-color, $color) {
+  background-color: $bgcolor;
+  border: 1px solid $border-color;
+  color: $color;
+}
+.Button {
+  &.mk-btn {
+    @include btn-default;
+    transition: all 300ms;
+    &-primary {
+      @include btn-colors($primary, $primary, $white);
+      &:hover {
+        background-color: $white;
+        color: $primary;
+      }
+    }
+  }
+  &.mk-btn-outline {
+    @include btn-default;
+    &-primary {
+      @include btn-colors(transparent, $primary, $primary);
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+    &-secondary {
+      @include btn-colors(transparent, $light-gray, $gray);
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+}
+

@@ -2,7 +2,7 @@ import React from 'react';
 import Daily from './Daily';
 import './Forecast.scss';
 
-let Forecast = () => {
+const Forecast = () => {
   return (
     <section 
       className="Forecast" 

@@ -1,18 +1,12 @@
 @import '../styles/variables.scss';
 
 .Weather {
-  // align-items: center;
-  display: grid;
-  grid-template-areas: 
-    "icon major"
-    "icon minor";
+  align-self: center;
   grid-column-start: 1;
   grid-column-end: 8;
-  .icon-weather {
-    grid-row: icon;
-  }
+  justify-self: end;
+  text-align: right;
   .major {
-    align-self: end;
-    font-size: $font-size-reg;
+    font-size: $font-size-lg;
   }
 }

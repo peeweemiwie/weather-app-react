@@ -1,7 +1,7 @@
 import React from 'react';
 import './Temperature.scss';
 
-let Temperature = ({temperature, feelsLike}) => {
+const Temperature = ({temperature, feelsLike}) => {
   temperature = Math.round(temperature);
   feelsLike = Math.round(feelsLike);
   return (
