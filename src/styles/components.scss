@@ -1,0 +1,33 @@
+@import './variables';
+
+// input default paddings:
+@mixin btn-default {
+  border-radius: .5rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+@mixin btn-colors($bgcolor, $border-color, $color) {
+  background-color: $bgcolor;
+  border: 1px solid $border-color;
+  color: $color;
+}
+
+.input-text {
+  border: 0;
+}
+
+.wa-btn {
+  @include btn-default;
+  &-primary {
+    @include btn-colors($primary, $primary, $white);
+  }
+}
+.wa-btn-outline {
+  @include btn-default;
+  &-primary {
+    @include btn-colors(transparent, $primary, $primary);
+  }
+  &-secondary {
+    @include btn-colors(transparent, $gray, $gray);
+  }
+}

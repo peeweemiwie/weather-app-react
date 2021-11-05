@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+
+.Current {
+  border: 1px solid $light-gray;
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: [header] 7rem [weather-temp] auto[humidity-wind] 7rem;
+  padding: 1rem;
+  row-gap: 1rem;
+  &[data-theme="light"] {
+    background: $gradient-day;
+  }
+  &[data-theme="cloudy"] {
+    background: $gradient-cloudy;
+  }
+  &[data-theme="dark"] {
+    background: $gradient-night;
+    color: $white;
+  }
+}

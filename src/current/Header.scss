@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+@import '../styles/typography.scss';
+
+.Header {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  .container-date {
+    @extend .h1;
+  }
+  .container-city {
+    @extend .h2;
+  }
+}

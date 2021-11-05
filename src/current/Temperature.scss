@@ -1,0 +1,11 @@
+@import '../styles/variables.scss';
+
+.Temperature {
+  align-self: center;
+  text-align: right;
+  grid-column-start: 9;
+  grid-column-end: -1;
+  .major {
+    font-size: $font-size-lg;
+  }
+} 
