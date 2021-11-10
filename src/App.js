@@ -2,18 +2,16 @@ import './App.scss';
 import Form from './Form';
 import Current from './current/Current';
 import Forecast from './forecast/Forecast';
-
+import Footer from './Footer';
 function App() {
 	return (
-		<div className='App' data-units="imperial">
-			<Form className='Form' value='test' />
-			<main className="main" id="container-main">
+		<div className='App' data-units='imperial'>
+			<Form className='Form' />
+			<main className='main'>
 				<Current />
 				<Forecast />
 			</main>
-			<footer>
-				Design and code by <a href="https://www.linkedin.com/in/miwayagi/" target="_blank" rel="noreferrer">Miwa Kaur</a>. View code at <a href="https://github.com/peeweemiwie/weather-app-react" target="_blank" rel="noreferrer">GitHub</a>.
-			</footer>
+			<Footer />
 		</div>
 	);
 }

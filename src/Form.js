@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './components/Button';
 import './Form.scss';
 
-const Form = ({ value }) => {
+const Form = () => {
 	return (
 		<form className='Form'>
 			<div className='container-input-search'>
@@ -15,7 +15,7 @@ const Form = ({ value }) => {
 					placeholder='Enter city name'
 					value=''
 				/>
-				<Button 
+				<Button
 					className='mk-btn-primary'
 					units='imperial'
 					id='submit-search'
@@ -23,25 +23,24 @@ const Form = ({ value }) => {
 				/>
 			</div>
 			<div className='container-current-location-unit'>
-				<Button 
+				<Button
 					className='mk-btn-outline-primary'
 					units='imperial'
 					id='submit-current-location'
 					value='Current Location'
 				/>
-				<Button 
+				<Button
 					className='mk-btn-outline-secondary'
 					units='imperial'
 					id='submit-imperial'
 					value='F'
 				/>
-				<Button 
+				<Button
 					className='mk-btn-outline-secondary'
 					units='metric'
 					id='submit-metric'
 					value='C'
 				/>
-			
 			</div>
 		</form>
 	);
