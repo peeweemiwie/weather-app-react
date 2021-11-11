@@ -1,16 +1,17 @@
 import React from 'react';
 import './Button.scss';
 
-const Button = ({className, unit, id, value}) => {
-  return (
-    <input
+const Button = ({ className, units, value, type, clickEvent, submitEvent }) => {
+	return (
+		<input
 			className={`Button mk-btn ${className}`}
-			data-units={unit}
-			id={id}
-			type='submit'
+			data-units={units}
+			type={type}
 			value={value}
+			onClick={clickEvent}
+			onSubmit={submitEvent}
 		/>
-  )
-}
+	);
+};
 
 export default Button;

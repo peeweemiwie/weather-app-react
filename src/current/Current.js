@@ -7,31 +7,24 @@ import Wind from './Wind';
 import WeatherIcon from '../components/WeatherIcon';
 import './Current.scss';
 
-const Current = () => {
-  return (	
-			<section 
-				className="Current" 
-				data-theme="light" 
-				id="current-weather">
-				<Header 
-					name="New York" 
-					currentDateTime="Thu Nov 4 2021 11:21am" />
-				<WeatherIcon 
-          icon="01d" 
-          description="clear sky" />
-				<Weather 
-					description="clear sky" 
-					main="Clear" 
-				/>
-				<Temperature 
-					temperature={52} 
-					feelsLike={50} />
-				<Humidity
-					humidity={54} />
-				<Wind
-					speed={1} />
-			</section>
-  )
-}
+const Current = (props) => {
+	console.log(props);
+	return (
+		<section className='Current' data-theme='light' id='current-weather'>
+			<Header name={props.data.city} />
+			<WeatherIcon
+				icon={props.data.icon}
+				description={props.data.description}
+			/>
+			<Weather description={props.data.description} main={props.data.weather} />
+			<Temperature
+				temperature={props.data.temperature}
+				feelsLike={props.data.feelsLike}
+			/>
+			<Humidity humidity={props.data.humidity} />
+			<Wind speed={props.data.wind} />
+		</section>
+	);
+};
 
 export default Current;
