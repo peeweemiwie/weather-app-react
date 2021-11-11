@@ -23,6 +23,7 @@ function App() {
 	const [updatedWeatherData, setUpdatedWeatherData] = useState('');
 	const storeDataHandler = (weatherData) => {
 		setUpdatedWeatherData({ ...weatherData });
+		console.log(updatedWeatherData);
 	};
 
 	return (
