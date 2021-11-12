@@ -13,11 +13,34 @@ const Form = (props) => {
 	const [wind, setWind] = useState(null);
 	const [icon, setIcon] = useState('');
 	const [dt, setDt] = useState('');
+	const [longitude, setLongitude] = useState(null);
+	const [latitude, setLatitude] = useState(null);
 	const [loaded, setLoaded] = useState(false);
+
+	const setForecastResponseData = (response) => {
+		let selectedWeatherArray = response.data.daily.map((item) => {
+			return {
+				description: item.weather[0].description,
+				weatherIcon: item.weather[0].icon,
+				tempMax: item.temp.max,
+				tempMin: item.temp.min,
+			};
+		});
+		// console.log(selectedWeatherArray);
+		props.onForecastReceiveRequest(selectedWeatherArray);
+	};
+
+	const getForecastData = () => {
+		let apiKey = 'ca544697c48cca918d7f2cc001774bb3';
+		let apiEndpoint = 'https://api.openweathermap.org/data/2.5/';
+		let units = 'imperial';
+		const baseUrl = `${apiEndpoint}onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=${units}&appid=${apiKey}`;
+		axios.get(baseUrl).then(setForecastResponseData);
+	};
 
 	const setResponseData = (response) => {
 		const data = response.data;
-		console.log(data);
+		// console.log(data);
 		setTemperature(Math.round(data.main.temp));
 		setFeelsLike(Math.round(data.main.feels_like));
 		setDescription(data.weather[0].description);
@@ -26,10 +49,13 @@ const Form = (props) => {
 		setWind(data.wind.speed);
 		setIcon(data.weather[0].icon);
 		setDt(data.dt);
+		setLongitude(data.coord.lon);
+		setLatitude(data.coord.lat);
 		setLoaded(true);
 	};
 
 	if (loaded) {
+		getForecastData();
 		const weatherData = {
 			city: city,
 			temperature: temperature,

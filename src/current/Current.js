@@ -8,7 +8,7 @@ import WeatherIcon from '../components/WeatherIcon';
 import './Current.scss';
 
 const Current = (props) => {
-	console.log(props);
+	// console.log(props);
 	return (
 		<section className='Current' data-theme='light' id='current-weather'>
 			<Header name={props.data.city} />
